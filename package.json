@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "React SPA Boilerplate for open source projects.",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base build/",
+    "start": "webpack-dev-server --open --inline --content-base build/",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:watch": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test:coverage": "nyc npm test",

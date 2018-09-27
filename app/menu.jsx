@@ -12,8 +12,8 @@ import Contribute from './components/docs/pages/others/Contribute';
 import Github from './components/docs/pages/others/Github';
 
 const menu = {
-  title: 'REACT SPA Boilerplate',
-  description: 'A React SPA boilerplate for open source projects',
+  title: 'Portland Weather',
+  description: 'A mini react app displaying the five-day forecast',
   homeLink: '/',
   docsLink: '/docs/installation',
   github: {

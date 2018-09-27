@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Home from './components/home/Home';
-import Docs from './components/docs/Docs';
-
-const $ = require('jquery');
 
 class App extends Component {
   constructor(props) {
@@ -10,45 +7,33 @@ class App extends Component {
 
     this.state = {
       link: '/',
+      weatherData: ['Hellow Orld'],
     };
-
-    this.handleLink = this.handleLink.bind(this);
   }
 
   componentWillMount() {
-    this.setState({ link: window.location.hash.replace('#', '') });
   }
 
   componentDidMount() {
-    $('pre code').each((i, block) => {
-      hljs.highlightBlock(block);
-    });
+    // fetch('http://api.openweathermap.org/data/2.5/forecast?id=5746545&units=imperial&APPID=2e67bf2756763f6ded1d40dfc8a78998')
+    //   .then(resp => resp.json())
+    //   .then((json) => {
+    //     this.setState({ weatherData: json });
+    //   })
+    //   .catch((err) => {
+    //     this.setState({ weatherData: `there was an error: ${err}` });
+    //   });
   }
 
   componentDidUpdate() {
-    $('pre code').each((i, block) => {
-      hljs.highlightBlock(block);
-    });
-  }
-
-  handleLink(link) {
-    window.location.hash = link;
-    this.setState({ link });
   }
 
   render() {
-    const { link } = this.state;
-    const isHome = link.indexOf('/docs') < 0;
+    // const { weatherData } = this.state;
 
-    return isHome ? (
+    return (
       <Home
-        link={link}
-        handleLink={this.handleLink}
-      />
-    ) : (
-      <Docs
-        link={link}
-        handleLink={this.handleLink}
+        weatherData={this.state.weatherData}
       />
     );
   }
